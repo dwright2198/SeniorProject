@@ -1,4 +1,19 @@
+import webapp2
+import jinja2
+import os
+
+the_jinja_env = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
+
 from google.appengine.ext import ndb
+
+./google-cloud-sdk/install.sh
+
+pip install --upgrade google-cloud-bigquery
+
+
 
 class Clothes(ndb.Model):
     shirts = ndb.StringProperty(required=True)
@@ -12,8 +27,9 @@ def clothes(self):
     pants = input ('Enter pants size')
     shoes = input ('Enter shoes size')
     return(clothes)
-    
-    
-    shirts.put()
-    pants.put()
-    shoes.put()
+
+shirts.put()
+pants.put()
+shoes.put()
+
+
